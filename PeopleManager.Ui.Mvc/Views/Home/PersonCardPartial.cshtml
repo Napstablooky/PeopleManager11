@@ -1,0 +1,22 @@
+﻿@model Person
+
+<div class="card">
+    <div class="card-header">
+        @Model.FirstName @Model.LastName
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Details</h5>
+        @if (Model.Organization is not null)
+        {
+            <small>@Model.Organization.Name</small>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Email))
+        {
+            <p class="card-text">Contact: <a href="mailto:@Model.Email">@Model.Email</a></p>
+        }
+        else
+        {
+            <p class="card-text">No contact information</p>
+        }
+    </div>
+</div>
